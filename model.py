@@ -455,6 +455,7 @@ class KnowledgePronounCorefModel(object):
             all_scores = merged_score * all_attention_scores
         else:
             all_scores = merged_score
+            all_attention_scores = tf.zeros([k, c, c, 4])
         all_scores = tf.reduce_sum(all_scores, 3)  # [k, c, c]
         all_scores = all_scores * diagonal_mask
         all_scores = all_scores * square_mask
