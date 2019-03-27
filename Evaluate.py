@@ -20,7 +20,7 @@ if __name__ == "__main__":
             tmp_example = json.loads(line)
             test_data.append(tmp_example)
     print('finish processing data')
-    # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 
     config = util.initialize_from_env()
